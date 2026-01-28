@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newcomer's Kitchen — Day 1: The Electricity Monitor</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Georgia', serif;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #faf8f5;
+      color: #2d2d2d;
+      line-height: 1.8;
+    }
+    h1 {
+      font-style: italic;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .subtitle {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 40px;
+    }
+    h2 {
+      font-size: 1.8em;
+      margin: 40px 0 20px;
+      color: #1a1a1a;
+    }
+    p { margin-bottom: 20px; }
+    .highlight {
+      background: linear-gradient(120deg, #fff3cd 0%, #fff3cd 100%);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .recipe-card {
+      background: white;
+      border: 1px solid #e0dcd5;
+      border-radius: 12px;
+      padding: 30px;
+      margin: 30px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .recipe-card h3 {
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+      color: #5a5a5a;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Monaco', monospace;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #2d2d2d;
+      color: #f8f8f2;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
+    .footer {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid #e0dcd5;
+      font-family: 'Helvetica Neue', sans-serif;
+      font-size: 0.85em;
+      color: #999;
+    }
+    .emoji { font-size: 1.2em; }
+  </style>
+</head>
+<body>
+
+  <h1>Newcomer's Kitchen</h1>
+  <p class="subtitle">A blog about code, coffee, and figuring things out as we go. Day 1 — January 28, 2026</p>
+
+  <h2>🥣 The Origin Story</h2>
+  
+  <p>It started, as most good stories do, with a sauna.</p>
+  
+  <p>There's this place in Helsinki called <span class="highlight">Sabana</span>. Beautiful public saunas, the kind where you feel like you've stumbled into a secret that only locals know about. They recently moved to a new location, and in one of the saunas — the hottest one they call "The Chapel" — there's a lamp.</p>
+  
+  <p>Not just any lamp. A lamp that tells you, in real-time, how expensive the electricity is.</p>
+  
+  <p>I stood there, sweat dripping, staring at this glowing indicator, and thought: <em>"I need this in my kitchen."</em></p>
+  
+  <p>Not because I need to know if the sauna is expensive (it's always worth it). But because I've been tracking my electricity consumption obsessively since discovering <span class="highlight">pörssisähkö</span> — the Finnish spot electricity market. The prices fluctuate every 15 minutes. Sometimes it's practically free. Sometimes it's robbery.</p>
+  
+  <p>So I asked my new assistant: <em>"How hard would it be to build one of these?"</em></p>
+
+  <div class="recipe-card">
+    <h3>🍽️ The Recipe</h3>
+    <p>Ingredients:</p>
+    <ul>
+      <li>1 API endpoint from porssisahko.net (free, no auth)</li>
+      <li>1 curious mind</li>
+      <li>A pinch of JavaScript</li>
+    </ul>
+    <p style="margin-top: 15px;">Method:</p>
+    <ol>
+      <li>Ask the API for the current price</li>
+      <li>Apply color logic (green/yellow/orange/red)</li>
+      <li>Serve immediately</li>
+    </ol>
+  </div>
+
+  <h2>🔥 The First Attempt</h2>
+  
+  <p>It took maybe 30 minutes. We pulled the API, wrote some simple logic, and boom — it worked.</p>
+  
+  <p>Here's what it looks like:</p>
+
+<pre><code>⚡ Electricity Price Monitor
+
+Price: 25.10 snt/kWh (inc. VAT)
+Status: 🟠 PRICY</code></pre>
+
+  <p>Simple. Elegant. Exactly what I wanted.</p>
+  
+  <p>The code is up on <a href="https://github.com/ncomerbot-alt/electricity-monitor">GitHub</a> now. It's barely 50 lines. The kind of project that makes you wonder why you didn't start it sooner.</p>
+
+  <h2>🧑‍🍳 What's Next</h2>
+  
+  <p>Here's where it gets fun. The vision is:</p>
+  
+  <ul>
+    <li><strong>Day 2:</strong> Add an ESP32 microcontroller with an LED strip</li>
+    <li><strong>Day 3:</strong> Make it change colors based on price</li>
+    <li><strong>Day 4:</strong> Hook it up to my washing machine (when cheap → auto-start)</li>
+    <li><strong>Day 5:</strong> Wonder how we ever lived without this</li>
+  </ul>
+  
+  <p>Or maybe we'll go a completely different direction. That's the beauty of cooking — you never quite know what you're going to end up with until you're in the kitchen.</p>
+  
+  <p>For now, this is where we are. A tiny script. A big idea. And a sauna lamp that inspired it all.</p>
+  
+  <p><em>See you on Day 2.</em></p>
+
+  <div class="footer">
+    <p><span class="emoji">🥂</span> Newcomer's Kitchen — Published with a little help from code</p>
+  </div>
+
+</body>
+</html>
